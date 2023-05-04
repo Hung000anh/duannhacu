@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/newpaper.css">
+</head>
+<body>
+    <div class="container-1">
+		<div class="modal">
+			<form>
+				<img src="/img/Screenshot 2023-03-25 092629.png" alt="">
+				<label for="username">Tên đăng nhập:</label>
+				<input type="text" id="username" name="username" class="username">
+				<br>
+				<label for="password">Mật khẩu:</label>
+				<input type="password" id="password" name="password" class="password">
+				<br>
+				<button type="button" onclick="checklogin()">Đăng nhập</button>  
+			</form>
+		</div>
+        <div class="md-sighin">
+            <div class="form">
+                <form>
+                    <img src="/img/Screenshot 2023-03-25 092629.png" alt="">
+                    <br>
+					<label for="loginname" > Tên đăng nhập</label>
+                    <br>
+                    <input type="text" id="loginname" onkeyup="Checksignin()">
+                    <span id="Checksignin"></span>
+                    <br>
+                    <label for="fname">Họ và tên</label>
+                    <br>
+                    <input type="text" id="fname" onkeyup="checkcapitalized()">
+                    <span id="testfname"></span>
+                    <br>
+                    
+                    <label for="phone-number" >Số điện thoại</label>
+                    <br>
+                    <input type="text" id="phone-number" onkeyup="checkTelephone()">
+                    <span id="testtlp"></span>
+                    <br>
+                    
+                    
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="text" id="email" name="email" onkeyup="checkemail()">
+                    <span id="checkemail"></span>
+                    
+                    <br><label for="pw">Nhập mật khẩu</label>
+                    <br><input type="password" id="pw" name="pw" onkeyup="Checkpassword()">
+                    <span id="Checkpassword"></span>
+                    
+                    <br><label for="re-enterpw">Nhập lại mật khẩu</label>
+                    <br><input type="password" id="re-enterpw" name="re-enterpw" onblur="reenterPassword()">
+                    <span id="checkre-enterpw"></span>
+                    <br>
+					<br>
+                    <input type="button" value="Submit" onclick="addRow()">
+                </form>
+                <div class="tb">
+                    <table id="myTable">
+                        <tr>
+                            <th>Login-Name</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+						<tbody id="user-info"></tbody>
+                    </table>
+					
+                </div>
+            </div>
+        </div>   
+		<header>
+			<div class="logo-item">
+				<a href="/html/index_main/index.html">
+					<img src="/img/Screenshot 2023-03-13 142256.png" alt="">
+				</a>
+			</div>
+			<div class = "item newspaper">
+				<a href="/html/services/newpaper.html">
+					<i class="fa-solid fa-newspaper"></i>
+					<div>
+						<h6>Bài báo</h6>
+						<p>Các sản phẩm mới</p>
+					</div>
+				 </a>
+			</div>
+			<div class="item showroom" >
+				<a href="/html/services/sale.html">
+					<i class="fa-solid fa-location-dot"></i>
+					<div>
+						<h6>Showroom</h6>
+						<p>Gần nhất</p>
+					</div>
+				</a>
+			</div>
+			<div class="item cart-services" >
+				<a href="">
+					<i class="fa-solid fa-bag-shopping"></i>
+					<div>
+						<h6>Giỏ hàng</h6>
+						<p>(0) Sản phẩm</p>
+					</div>
+				</a>
+			</div>
+	
+			<div class="form-login-signup">
+				<div class="btt-1">
+					<button type="button" class="Login">Đăng nhập </button><i class="fa-solid fa-right-to-bracket"></i>
+	
+				</div>
+				<div class="btt-2">
+					<button  type="button" class="Sign-up">Đăng ký</button><i class="fa-solid fa-user-plus"></i>
+				</div>
+			</div>
+	
+		</header>
+	</div>
+
+	<nav>
+		<ul>
+				<li class="nav -piano">
+					<a href="/html/piano/piano_main.html">
+						<p>Đàn Piano</p><i class="fa-sharp fa-solid fa-chevron-down"></i>
+					</a>
+					<ul>
+						<li class="in-nav ur">
+							<a href="/html/piano/upright.html">
+								<p>ĐÀN PIANO UPRIGHT</p>
+							</a>
+						</li>
+						<li class="in-nav gr">
+							<a href="/html/piano/grand.html">
+								<p> ĐÀN PIANO GRAND</p>
+							</a>
+						</li>
+						<li class="in-nav dp">
+							<a href="/html/piano/digtal.html">
+								<p>DIGITAL PIANO </p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav -guitar">
+					<a href="/html/guitar/guitar_main.html">
+						<p>Đàn Guitar</p><i class="fa-sharp fa-solid fa-chevron-down"></i>
+					</a>
+					<ul>
+						<li class="in-nav ke">
+							<a href="/html/guitar/ukulele.html"><p>ĐÀN UKULELE</p></a>
+						</li>
+						<li class="in-nav ac">
+							<a href="/html/guitar/acousitic.html"><p>GUITAR ACOUSTIC</p></a>
+						</li>
+						<li class="in-nav cl">
+							<a href="/html/guitar/classic.html"><p>GUITAR CLASSIC</p></a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav -drum">
+					<a href="/html/drum/drum_main.html">
+						<p>Trống-bộ gõ</p><i class="fa-sharp fa-solid fa-chevron-down"></i>
+					</a>
+					<ul>
+						<li class="in-nav drel">
+							<a href="/html/drum/drum_el.html">
+								<p>TRỐNG ĐIỆN TỬ </p></a>
+							</li>
+						<li class="in-nav drds">
+							<a href="/html/drum/accousitic.html">
+								<p>Trống ACCOUSTIC </p>
+							</a>
+						</li>
+						<li class="in-nav drbg">
+							<a href="/html/drum/bogo.html">
+								<p>BỘ GÕ </p>
+							</a>
+
+						</li>
+					</ul>
+				</li>
+				<!--  -->
+				<div class="search">
+					<input type="search" name="" id="" placeholder="Tìm kiếm">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
+		</ul>
+	</nav>
+	<div class="container-2">
+        <article>
+            <h1>NHỮNG SẢN PHẨM NHẠC CỤ MỚI NHẤT GIỚI THIỆU VÀO ĐẦU NĂM 2023</h1>
+            <p>Trong sự kiện CES 2021, một chương trình giới thiệu nhạc cụ thông qua internet, do ảnh hưởng của dịch Covid Roland đã giới thiệu một số nhạc cụ mới phù hợp cho âm nhạc công nghệ thời đại, đặc biệt các thiết kế về kiểu dáng của các sản phẩm này cũng mang đậm hơi thở hiện đại. </p>
+            <h3>Aerophone Pro </h3>
+            <img src="data:image/jpeg;base64,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" alt="">
+            <p>
+                Đối với những người học nhạc cụ hơi có nhiều tham vọng để đến được con đường âm nhạc chuyên nghiệp. thì việc luyện tập mọi lúc mọi nơi là điều không thể. Nhất là trong thời đại ngày nay, khi chủ yếu mọi người sống trong các căn hộ liền kề. 
+            </p>
+            <br>
+            <p>Không giống như guitar hay piano có thể sử dụng tai nghe, chưa có một nhạc cụ hơi ký thuật số nào trước đó được sản xuất để đáp ứng yêu cầu này. </p>
+            <br>
+            <p>Từ việc tìm hiểu nhu cầu người dùng, thực tế sản phẩm Roland giới thiệu Aerophone Pro vào sự kiện đầu năm 2021 đã làm thỏa mãn mong muốn của nhiều người học nhạc cụ hơi, thậm chí là cả các nghệ sĩ chuyên nghiệp. 
+            </p>
+            <h3>Aerophone là gì?</h3>
+            <img src="https://vietthuong.vn/upload/content/images/tu-van/2021/nhung-san-pham-nhac-cu-moi-nhat-cua-ong-trum-roland-gioi-thieu-vao-dau-nam-2021-1.jpg" alt="">
+            <p>
+                Các nhạc cụ hơi, như kèn trumpet, kèn trombon, kèn clarinet và kèn saxophone, truyền thống khá ồn ào khi chơi, nhất là vào buổi đêm. Đây là nguồn gốc của việc người học bị hạn chế thời gian tập luyện và sự cọ sát lẫn nhau. Có một số cách thủ công để tắt tiếng, chẳng hạn như thêm một miếng vải ống vào thân của kèn saxophone, nhưng cách này cũng không thể giảm âm của chúng như mong đợi. 
+            </p>
+            <br>
+            <p>
+                Aerophone Pro mở ra một thời đại mới, nó tích hợp các nhạc cụ hơi bằng gỗ và đồng vào một công cụ kỹ thuật số. Đẩy việc tập luyện nhạc cụ hơi lên một nấc thang mới. Mặc dù là một nhạc cụ được trang bị công nghệ tổng hợp của Roland, nhưng người dùng vẫn phải thổi vào ống hơi của Aerophone Pro, sau đó mới có thể điều chỉnh cho phù hợp với phong cách chơi của mình.
+            </p>
+            <br>
+            <h3>
+                Tính năng của Aerophone
+            </h3>
+            <p>
+                Aerophone Pro được trang bị bộ tạo âm thanh ZEN-Core và SuperNATURAL của Roland. Công nghệ ZEN-Core cho phép bạn chuyển đổi giữa các nhạc cụ một cách liền mạch. Điều này mang lại nhiều khả năng cho các nhạc sĩ trực tiếp và nghệ sĩ ghi âm, với hầu hết các nhạc cụ bằng gỗ và đồng thau được thể hiện.
+            </p>
+            <br>
+            <p>
+                Màn hình OLED tích hợp giúp bạn điều chỉnh cài đặt, chuyển đổi giữa các thiết bị đo đạc và tùy chỉnh trải nghiệm của bạn. Bạn cũng có thể cá nhân hóa Aerophone Pro với các ứng dụng iOS và Android đồng hành. Thiết bị được trang bị Bluetooth, MIDI và đầu ra tai nghe. Thậm chí còn có một loa tích hợp để biểu diễn khi đang di chuyển.
+            </p>
+            <br>
+            <p>
+                Trong khi đó, trình tạo SuperNATURAL số hóa các đầu vào vật lý của bạn, như hơi thở và các lần nhấn phím. Kết hợp với bộ tạo ZEN-Core, Aerophone Pro có khả năng tạo ra đầu ra đích thực theo phong cách của nhiều loại nhạc cụ chỉ từ một thiết bị duy nhất. Nó đi kèm với một pin có thể sạc lại, một cổng USB-C và một khe cắm cho bộ nhớ có thể mở rộng để ghi âm trên thiết bị.
+            </p>
+            <h3>
+                Giá bán của Aerophone Pro
+            </h3>
+            <p>
+                Aerophone Pro được ra mắt vào tháng 12 năm 2020, và CES 2021 là sự kiện đánh dấu lần ra mắt quan trọng của sản phẩm này. Dự kiến nó sẽ có mặt trên thị trường vào cuối tháng 1/2021 và có giá bán lẻ khoảng 1.499 USD. 
+            </p>
+            <br>
+            <p>
+                Đây là một mức giá không thấp khi một chiếc saxophone trên thị trường chỉ có giá khoảng 500 USD. Tuy nhiên với sự tiện lợi, thông số kỹ thuật ấn tượng, tích hợp âm thanh nhiều loại nhạc cụ cùng các thông số kỹ thuật ấn tượng và tính di động, Aerophone Pro đang là đại diện cho nhiều giá trị thời đại một nhạc cụ hơi cần có. 
+            </p>
+            <br>
+            <h3>
+                VERSELAB MV-1
+            </h3>
+            <img src="data:image/jpeg;base64,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" alt="">
+            <p>
+                Roland đưa ra thông báo sẽ sản xuất một sản phẩm nhạc cụ tổng hợp đặc sắc mới trong năm 2021, một thiết bị để các nghệ sĩ hiện đại sáng tác âm nhạc. 
+            </p>
+            <br>
+            <p>
+                Sau khi công bố Aerophone Pro, ngay lập tức sau đó Roland cũng giới thiệu một trong những nhạc cụ tổng hợp sắp ra mắt của mình tại CES 2021 là Verselab MV-1. Đây là một nhạc cụ tổng hợp độc lập, nghĩa là các nghệ sĩ có thể chỉ cần sử dụng một mình nó để tạo ra âm nhạc riêng của mình.  
+            </p>
+            <br>
+            <p>
+                Roland đã đưa Verselad MV-1 sẽ được hãng này phát hành trong tháng 1/2021 vì vậy người hâm mộ có thể sẽ sớm thấy sản phẩm này ở các đại lý của Roland trên toàn thế giới. Nó sẽ có giá khoảng 700 USD, đây là một mức giá rất dễ chịu để người dùng xem xét và sở hữu sản phẩm này. 
+            </p>
+            <h3>
+                Verselab MV-1 có thể làm gì?
+            </h3>
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYVFRgVFRYYGBgYHBgZGhocGhwYGBoaHBgaGRgaGBgcIS4lHB4rIRoZJjgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHhISHjQrJSs2NDQ0NDE0NDQ0NDQ0NDQ0NDQ0NDQ0NDQxNDU0NDE0NDE0NDQ0NDQ0NTE0NDQ0NDQ0NP/AABEIAMIBAwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAACAAEDBAUGBwj/xAA/EAACAQIEAwYEAwcDAgcAAAABAhEAAwQSITEFQVEGImFxgZETMlKhQrHRI2JygsHh8BQzkgfxFSRDU3Oi0v/EABkBAAMBAQEAAAAAAAAAAAAAAAABAwIEBf/EACoRAAICAgIBAwMEAwEAAAAAAAABAhEDIRIxUQQTQSJxgTJhkbEUQtFD/9oADAMBAAIRAxEAPwDzS7fJ1LHkA0TECMoPIa9RExW/2Z4Sxb4ziPp8eWf8x61Z4Z2cRTmchmP4R8g/Xy28K6RFiublXR3qLk9h20ipBQiiArDLpBg0QoBUi1lmkTIalUVXU1KGipyRaDLCtGgoi9VUxCyVzDNExIkDkY3ij+JNS4l+RPnrie2nEjcdcJaO5BuHkB8wB8AO8f5a2u0HGFw9vNoXYkIpMAkCSSeSgak+XWuN7NAMz4i6e7m7ztoCSdAP4m1I8IquPG19X8fchkyRk+L67f2OjtXUweHBPMAAfiPNV8zqxPvtXPYV2xDviMQ0JbGYR8qqJjKDuTsvMkzUd68+Nv6AlQSqryjcz+bHyFQcf4mpAw9nVFYZm/8AcfaR+6Dt5eGtow/1X5ZGWT/0f4X9CwIbE3y50LNCjcKAI9lUfYnnXouCsBFCjZRA/Xzrmey+AyIHO5GVf4RufU/lXUoYEU2vn+PsJvfDxt/u2TK2tTB6rhqJTU3EopE8000BNKaVCbCL0E0ppTTSE5CzGmY01KtJGGxppjSpq0IampxSoMsCaWanIoCKYCpmNOaE6UGRRSpTSoApIlSimAo6xZVKhKKMCgWjFAwqIU1ODSAdTUOOxq2rb3G+VRPn0UeJMD1qYVwvbPiudxZQ922e94vtH8uo8yelCjydDcuKsoYK+t281y/cZGbVWUlYbYd4fKABArpbXEsRZUsGXE21j/5gCSASVBBEhtTvB6VwocKQTsCJ0zfY71Pw/GurE2SwMwABJaCCsrqCdBVXG0SWSpVeyz2k4jcxF5jlKrogVtCoBBOYciTv5DpVS9jIti0hMA7ToWiM0eAJjxY9BWueL27x/wDMWgdFh7Yyvuc0ydZB01gETBGlY5jNIAG8eAPKd9tKarquhcXtp9/0aPx/g2RbUkO4JZpgi1OoU8szA7clHWsvhtsu4gcwqjxYwP1pYxi2Y6SxE8gFAAVQOggewre7H8OLPnjuW9j9Tka+w/pWlVGJSfJa6O4wlvKqgbKAB6CKsGgQaUQqcts3HSHow1BTzSo1ZKHos1QE0g1Kg5E4alNQhqIPRQ+RJTUgaYtTCxzTRSpUGWCRTGiihJoAaaE0RFCRQA00JoqCmZGy0qeaVBogAoopgacVMoOBRihFPFMAhT0NIsI1pAZ/aDin+nslh87d22P3jufIDX2HOvMs3M6/mT41pdoOKf6i8WB7i91B4c28ydfKOlUUsMwJVWIXcgEgeZFXjGkc8529Elq9lDKVVlaMysN4M6MIYehobVoMxEqgYnf5VGsCftJgdYoLlxmjMZj38poAwiZ1+kgj2NarwTUvlrYT27iuPibxpBUjLJAIy6Rodakmo0A3iOdWEsS6oxCZiveYjKAxjOT9I39KHs1D6VR1PYnhoYtiHTMqyiLAbU6O5U7qB3dJ1Y9K2uIcDw6q9+zcbDlAWYoZTQfitn8hGtZPFOzjhluYa4GARVtqGNt1VR/6dxTlYk5mMxqxrN4vxO+LK2L7d8tnuSFDBQQERyuhJILeWWs8flGue2mizw/ta6wLyZh9SQG9VOh9CK6fAcStXh+zcE/Ts481Ov8ASvNyFzMrSrLGoOZdRIEb+sneibDMO8pzAa5lMx4nmvqBWWkaT1a2ep0prgMB2mv29GPxF6P83o+/vNdJgO0li5ALZG6PAHo+3vFFMOSZtUpph1pA0APSpqegB5pw9BSp0KycNSBqEUQelxHyJaA0s1LNSoLBNC1EaE0ACxoWojQE0AKlVW5jbakgsJHiKaimOyYUVCKIVMqEBTzTE0qACFcx2z4r8NPgoe/cHe8E2P8Ay1HkGrfxmKW2jO5hVBJ/QeJ2ry3H4prztcbdjMcgOSjwA0qmONuyWWfFUvkitpPMDzMT4AnT3rTw3EXsoyBAJ2YyCJHhow00qLA4VWgq6Z9ZS4CFaZ2Pl/gqNr72nZQMgP4CQ6GDqCGkMJB9yKucnJ3TWvJWWNBOUdTJHhtVrC4JrkwNBz3HpUqYf4h0XL1C95D1KkkkeX5Vu2HFpYYhVAM+A9PyqM51qPZ14cCf1yev7IeH8MSCrJndoUEsVAnoBt5zXtR7J4e7ZCPbVlgZQRoukDKdx6VwXZjs5fuIt5Xa2xkqMoZcrfKtxD8xgAmCCNQCK6i/2jv4ZCuItwqj/cSXSOrIe+nswEfNVcTpO2c/qpcmlBUl4OJ412dfB31TBXXVnZv2ZOZIVZZzI+Ud0SQTLDWuW4tgbyOzYm2/fJlhsSdsrCR6dOlendlMSmKvviG7wYlEOncRWiCJkMzS22wUHauz41hbRtkZVMiI3B8xTlxvRiLaSTPmcpvl6ASdyFECY8BT5yuXKGDbHWQehGmnPSu/w/Y8Ytrr2u4mYrbyiVOTuu8fSWBgAxpPOsLjXZPE4YnOmZR+JdR6jceojxoHq+zFzrlLMI70SpG5jQp0idoov9PIlWDaxlE59pnLGo8iar4rDoSCoYHQkGIEcwdyD6bc6jIIJJnwj7SKKDm92aWB4nds/I5A+k6p/wATt6Qa6XAdrUOl5Ch+pZZfVdx6TXHpeZ172uuh5++8fpTmk4pm1JnqFjEo65rbKw6gyJ8elTV5ZZusjZkZlbqpIP2rfwPax10uqHH1CFf2+VvtWXFmlNfJ2lICs/h/F7N7RHGb6G7r+x39JrRApGhRThaNUoihoM2QxTE1KyxULmgExy9NmqNqAtSo1YTPVDieOyLCwXbRQSBGhJZjBhQFOpETE6VJib6opdjAEfcgAe5Fc38S5eLhQ8tAd0VbiqkMVAA235wdJzaEEoTkNexyqxCkMJJn42WWJltFEfMTqN96VUG4ATqt5CDqD8O8J9ERl9iaenUTNyO7p6GaIVA6xU5NKazeOcSFi0z6ZvlQdWO3oNSfKmlYm0lbOa7ZcUzMLCnuqQzeLR3V9AZ8yOlc7h1TMM+YIeajXxid4qLVm1Msx1J5kncnxJqwLNxdIYTtpmRtfHu9f7V0pKKo4W3OVl3GWu4WVrd1AAM3yunTMh29Ki4ezhjIDLoGDAnNAIAI8j5VImGWFLKFYH8LGDzEgzBHgRVjTzNSnlXSOvD6R3ykqXgv4MgDKoA5dPaq2LuFrwTKWS2ys4mM8EaCdxrMc/aoJI39qsWL/QCoxfHZ2zx8lTf8Hcntzdt2/h4a2AYA+JcgtPMi2sCfX0rmcd2kxN8sl67mVgQwCIoIO47q1nm2z7kx4VXfCAdZ8TRzb02T9mMdpL8l18W6tnS4yPGXMhyEqNgSkSKkwfELrsJe5ckEQzO/tJNZmHvMjggjTwBH3qziMc+YN8RgwXKCDBCzJAjYSBRseltUer/9PeJoLbW3YZ1Ldz8SrOkqdQNDB2qXtvxQFAtqDcci2n8bbE+CiWPgpryrA8Qd3GZ3uGNASzsvXLuR41u8JsYm85vL31tl7aI7FZ0VbhS4okEEFQTOx1Aq0ZN6OLNhSfO9tnU2P+nNl7CrlylVADDRiQPmPInzBrgO1HZRsHmfOGQHpDDoCP6yfIV6pgu1yKBbuq1q5sEuDKSeiOCUfb8LE+Arzj/qDxn494W1+VO8/wDGflHoPzNbTd0c1PbZx0UNxgoLHlU2WqmOsswAX1HPwqoNkVrHj8QjxGo9qtqwYSCDUvCxhzbFtyFuZmZluDIjHKVQC4AcgAJOo1PMVJxjg1u13rbujAAhHgswkrmVk0IOU7T4xVlhclcdkvcrseyLbBFeUIJDOBmBBIIYjeV12Gum29bGB4jirYlG+OkxB7zaCTEEtzHMiuXY3bahriNlMQ0aaiYkaTEGNDR4fFCZRoMEdDB3B6iueWOSf/SsZo9D4V2qsOYcm03Rz3Z8H294rf8A9fazZM6ZtIEgTIkR106V5a2PDgi6gdjqLmocHSZ1gjSI0iT4Rqi2l7D5RtAiOUbVGUuNWjrwYfeTp7SO8uRVdhXBYDtDdwytbcG5HyZjBGokFvpjbeDHKupwHGkuWxcPcmQVkMwIOui6xz1A5Vt9X8ElfLjW/Bfao3ManQDXwFSZwQCDIOoPWsy5c+KzoFdkt5WuZfnYSwZFX8URrGvLU6Um6VgVccXdWurmy2zoqAM8Qh+KyEyyDXaDodedVuzPFvhYlkuFR8TLLj5Xb5rbg7SytvzzCYIM3cZhbuAK37R+JaEqyMvfS2zAgKxJKgaCAQJ1jeOe7V2UDI9v/bdSU/gJzqI5QXdY5BI5VlVLXwxO1s7y9wGwzFirgnU5GKrPMgA6SdfM0q5Th3bYpbVHUMyiCSdT0n0ilUvayFOUDpBRA1Xz1FfxSopZ2gD/ACAOZp0Xb8FpmrzntFxP492FMokqkcz+JvX8gK3eIccZ1ZEXKrAgsT3oO8R8v3rFtKF+VQK1GSjsT9PKem6RQs4Jjq3dH39uXrWijQABsNBJn86Zmp1XrWJTcuzpxenhj678jb7mT0FSoh56fnTqn7sUa2xWLLAm1NDbXKdTVkppzqtcXnRFvonKK/UxXMUV2+2tWrHA79zUvbRd8z3UVfsxP2qij0b3gB41Ta6RF8X8mivALZuW7a4hbtx2IbIRkVQJJB3JmABAmSeRrrV/6fsqq6QxGuW4C6N4MFKkf5oa87YyJ58vPlXQ8N7aY2yoVbzOBpluDOI6Zj3h6NWk/JCcX/ozS4txN7C/BNpcOzd1SmU2xrDOGAB7oOaGUct69A7FCytlEXLlVQF1DAgaAzzJ39a4PhfEVxN83XENkyIg1C83Mnm2noIrWPDQpLWWayx1OSMjH9+2e6x8YnxqilFaQf42ScbZsdvsVaS07EKwiMpEgk6AR5140iaa7nU11F97uMxKYZ2BW22Z2SQCBzgkweW5gmpu0KYOxcW38Ns1wZiEGbIAYBCyGWe98v07Gtp0cklX4ORYQKa3ilYgaNInSFIAjoI9xNbX/h6MDcsujooJIYzGhkMIBXwDAGsgW1DFlULPTXnsJ1jb2ra2TbaJTglcQGUn6X7hn9xvlPqQaz8Rw9kMAlSPwtt6VYxYdQHCFkOkjrPWD/gqfD4llUK0ERqjd5R1gHbzFajKUXcWZdPsis8YNqyyMrZvwGSUmIGhMLEzAGsQfDJ4fakljy0Hn/n51uWLSOwVmKgjYwZ8Af7Vp2sLhkX5NtdTP22rGb1Lb3tnT6f0M8itUl+5zpq5wXFi3cysTlOgB0OY6zHTeugXCYYgMEXkelVOI8CRlNxJnz18CK5pZozXFo7Yejy4ZcotaFxVAFYoFaVYQwkAsIzAcmHI+A6Vm9nU77Mfpy++/wCVaGClk70E/KfMf5NRcGww+K8/hAjpqTNZjKouJucFLKpG/hb1x7KLaUl5ZWI/CEJLGOpGw01YVv8ACsEsI/dZVJe04DJcOcHP8RdATJ8tAYEVldlbIZrmUuhRw5dSMrqVX9m6mZ2YzHrXVmsTnao5ZRqbI7yK6lWAIYEEHUEHQg1w2K4clspacBkt3sozSQUKXLiZ+ZUNcAPULXSdoePJhUDFc7sYVAY1gmWPIaV5jxbjFzEuWcwCfkXRByEjmYA1Nbwwk9/BPJKK+51jcU4YvdIZiNCVs2Sp8oTalXCUqv7a8sl7j8HY47jqp3bcO3X8I/8A1WFexD3GzOxb8h5DlVcCpUWueTPWhCMSUtyoVtk0apSZ4rBpuh0tUYIFVmxPjTfFB50+LM8y1nFSI1UlaiOIApcR80kXHvACqF7EczAHjVa5fLGFk+QmtDgdhDc/aAgQYB5zv4abetUUVFWycJPNNQTqzOGMTMAxYLOpUBiPIEifetSxZw73FW27uGJLExIUaaAqO9J56QD4VK/ZwYm+yWBAUSzRIk7KBI6Has/E8BfDvldoYDMCpjSYkNuPWPWuqOHlBTS0zhzZJYsrxtp14PVeE9hsC9rMxct1+IQfYQPtXLca4BbS4lqwGZ3aBmMgKNXYxGgH3K9ao8L7U37AyOM69flePHk3nua6DstxZL2Ja47DNoiqTDBRDaDqSTP8K1P22uzHvOtMiw3Z7EYdvii2txOikq6+MMSG06EHwqTiHaJFtOVkOBGRgVcHxU616hfxtr4WkbV4r2wxS3MTkWIt/MerEzHp9iKFBNlo+syRhT/BQ4Liblt8yuELfOzDMpO4DDnrpprzrY4hct3oOJtBHAMXrZJEA75l7yAE6AgjWsDiPDrptjKBlOpgyfJo+U6c6oYLHXrTqqZhOmV+8PGDzEflVWji5PpnWYbgLWUvYjDXPj3HXIhBUMgYj4jZphmiI22rnnxxDFL9slpAML8LEamBKxlf1AJ61Pb4woYG2fguCRIlUeIjUaddCOflW7Y7QBiv+psq+UhkcKpYEbMAdPVSKKaDTpLRk4zhpR2tJcV3AGZAcriVmChPeMH8Bbem4U6I5DqCw0ysNhz0NWMd2eW+z3cPcVy5Lsr66kzowGZDqYkR41V4mtzD4a2uIGa87sELGWt21gEfEBMzyBJAB20rMrlGimKXCfJrSH4hhbN/W2crCcpBgH029awHS8JXPtpBH9qt4O701qbiWEZ8jqCx1BCmDtMr46bVHHKpcZHoeoTljeTHaa7r5Ml8XcUQZ6TyI8xXZ8E4qLiqokmACOnn0rkEuHNl1Mb5hlZfAitfs7bKszQ2UwdFkTrOtPPjio2jHoPU5JZOMm2n5+KL+Ntmy+b8Db+XXzFR4d4vTOjK3rsRV/igzINI51zYuZHUzMEx6gj+tQhtHZmai7R0fZ3iTpcuogLMxQqqhcxjMDqzKANqXaXj11It/E/aaFlQjKnMZ2ULmY/Rt16Gl2fwYurcdh+IZGGjKQN1blv+tUeK8IZCW6knNsrEme99DH/ieomK6Y41ps8rJlbkzaSzbxltjb+fKA9uQGVgZzLm1ZZ1GvUHmK4zEWWRijCGUwaNHZG0LIy9CVYHzGoor1xrkl2LONcxMlhzBJ1JG49fCqJOP2It2VmBGkdPuJpVPbxrqAA2g22pU7fgVIvAAb0zYkCsx8QTQZya5lj8npv1HwjRfG1VfFE1EtvrRZa0oxRl85d6GW6OZqZL6nSqrW6hZYrfFMi5SgahfxphcHPWs5bjDY/1ovjHwpe2DzX8GvaxCryqymP8q543j4UaXBs0g9Rr7ik8VjWdro6ROJlSCDBGxBgzyAI25VrYbFBnNxiXYgKSTLQNdPeuHKsO8BmHVdfcbitXguPUEyZPsaKlHcWaWaGR1NHQ4fh4vO7DuWwYURoW5tl5ekVQxHDVV2QzmWDmUFlAPWO8v3ocNxhld1Ruhg6rHPTrtWnw3HBczODLtJbfWNBG+lUhzbt9GM/+OoKME7T2wE4xirSxn+ImwYnN/wDcb+R9qzLAIOZtWJLHxY/mNvQV1PBeDriPiXGJUOe6AY0XmRsdRzB2rLxHDsruiS2QwWA08omZ8p8q6HicUpP5OLlydHOWcddtMzF2RiZAILI3hI2On61p4fitq4ma8uQsxAYHSQNeXy+fPn1naxpqARt1Hr/eqeL4YHylTkKCFEAr/wAanQtoixPCVE/CfunaRKNpy3g8ue1VHZ7CooMCCWMZkLE6L6f1o8NZuWWZ27qKpY5SCj9BlP8AUcqmw/FlI/aJln8Sd5f5k3X/ADSgWhYTHhmA1RxJDIZXTnPzL963LfHHKZboW9bMCdCY5DNBB8mE1lPw9CjNbgZ1jOuog76cp9KyGw120ZQGfqQkz4Ff7RRQ02i7jERbp+FIRgGVSIKzuvTcHY8xVzDlkj0MfflWc96XCsBKgBmGgzHXbltyrTQyPKuPMqkev6Wd4qJ71y2zh8on6SxYA84B5eBJ+9WFxXTbkNgKzjaEzUpuBRUpNyezpi4Y41FJBYvEmDJrm79wsxPiYq7jb8zWfaaGQ88wj3mrY4nBnyWzv+B4T4VpUO+58zqav3LYI1G+kVHZMgeVS8qu9HIla2c1xXgcjuDQbLzX+Cd1/cPoRsaPZrh7HEd4Sqq+uoGZh8NR1VszjQwRFdiwrOxuADHMhyvpDDmVMrmAImCAQdxyIpN2qQuNP9ilj+xLG4xtmEJlRA0B160q1bfH8QoAa0GI3br47j8h5DalU7y+Df0eTzZLXWpRUKszGBJPhWpg+CO+rHKPvW3FsvHJCHSKM1aw/D3fZYHU6V0GE4bbTZZPU1fHhQoCn6l/CMC12e+t/arSdn7XOT6mtYU81tJI5pTlLsx7/Zy0fllT5z+dUH7MP+FwfMV1ANGtOjNs4u72evDYK3kf1oLXAL7fgjzNdzUimig5M4g9nsSuqqJ/dbWq1+ww/wB60yn6lEH15GvR0+9OyBtCAR40ULl5PO+GYYK5YMHERpM6/Uu4rYUDlWhi+yiMxdHNs9BsD1rLxWBxOH1dPiJ9afN5sv8Ab1pp12LT6NXB4t0+RiOuuh9Nv61awuJKKSRmljJBGaTrJB/OsPB49H2I9N/Vd/aa0EM7GapybVWL9LsvYS0r5mY94nkdv8/pUS2M0wNBzH6be0UIMiCPXY+U9KsWbpRdCpknTZv0jl6UqNJp9lR7J5a9fDzG4rMxPB0eSAUJ3K6A+a7V2/AsFadGZyCxJPiI6cxzPtWRfsBncIJVTAMwf0Pr1GtUli4xTfyKr6OWxNhkfNDhAFVGQmUAGuZR4+BFKzxGc5aGVADnUZSSdlK7E+Iit17epA18Oft+lZ2MwiOCp0kzI0MxEnr61MRl4h7bd9IJJ1I0P8w3p3xRQBtxsagxeDdDmkMo3aIYDbXqKjLypXedvPlXPkj9Vs6sM2oNdMvYXESG10GonoaF7tQW7Ma7aajlSdomotK9F4yko0yvfaav9n8F8S8CflTU+ZrNJk113ZTDlbWcjVzm9KtBHNkezfUUdAppE02ERNTNTzQsaybAyUqbN409OxcUc/hsKiCFUefOrQNAKNa2RsIGjFRzRzQIOnFADRA1oQa0a0C0aGgQS0a0wNSKKAJUFTK1RAUVunYqJTSJpGhegKMviPALN7vFcj/WndafHkfXWsPEcNxFg5l/bJ1XRwPFfxfeuvmkKQ0zk8FxZHMHfmNmH8p39D6VqWyGEqZ/p5jlVviHCbV750Gb6h3W9xv6zWJf4Pfta22+Ko5E5XA6A8/80pqTXYcUzWRyBAMc55++8eFJHZQcpBk/KZ98wrHw/FhOVwQw0IbutP5H7VpJdDbH02I8xWk7DcSTC5JbPuevvI9Z28KiWyXLRBA2J38Iby11ncUneRlOomY8dqZL5QEqdZ+UjTbfNy2AoBNPso4qzEqfIg+X3Gtc1csFHy8t1Ph09K6a4Z1PrWJxJpcDoI9Tr+UVjJ+k3ity0SoJFVMRpVoNAqjiX1rkitnfOkiK2mZgo/EQvvv9q9Fw9sKoUcgBXHdm8Lnuhjsgn1P/AGrswa6YrRwSdyJJpiaGaeayykQ81AWpppiaybGpUNKgDIBogajBolqxzks0QNCiGpFt9azaNKLYlqRFp0QVIppch+35GVKkC04pwaLHwQgKNRTCiFOw4IkQVIoqNWowaLFxRIKeKZaKadi4gxTFaKlRYcQYpRRUqLDiVcZw+3dEOgbodmHkd65/FcBu29bD51GyPow/hbT+ldUaakFHFW+LFWyXVKMNw4yn0bY+sedXBcDbH05/39K38bhEujLcQMOU7jyO49K57E9mnTXDuSN/htqP5T/2860pMw4ojxNzIpY7Ae/Qe9YYktJ35+Z1NWMTeuzkuKy5d1bUk8tdyOfP7VHYWo5ZXpHX6fHS5MndoFZV5tav4p4FZtZgjWaXwdd2XtxbZurfYACtwGsrs6p/06zzJPoTpWoKt8HItsMGnJoRTFqyyqHmhJpFqYmsmhUqGaVAGaqCpBQTRCmCSRJNPmqMGimgZKpolNRqaJTQIlBogaimjU0ASrRiolNGDTETLUi1AhqVTTESCiBqMGiBoESTTUhSpiFSpUqAHmmpU8UABFC7hQWbQASakrne03EIHwlPi39BSbpWOMeTpGBxPFG5cZzzPsBoAPSmsLpVfc1NcMCud7Z26iqRTxlyTUWGsF3VF3Y+w5mhu6muh7LYX5rpG+i+Q51eK0cWSWzocNbCIEGwEVKKSUq0zEUPNNSJoSayVEWoZpppiaQx5p6jpUAUhRilSoAdaelSoAMUYpUqAHFGtKlQAS1IKVKmBItSClSpiY4oxSpUGSRaKlSoAcUhSpUxDGmNNSoAVcFxb528zSpVPJ0WwfqZVtb0WI2p6VTXZeZlvz8j+Vdvwf8A2U/hFKlXRE8+fZoLvTtSpUM1ABaVKlWCgBpGlSoGNSpUqQH/2Q==" alt="">
+            <p>
+                Đầu tiên nó có thể ghi lại giọng hát, có nghĩa là bạn có thể ghi nhớ giai điệu, các cảm hứng bất chợt trong quá trình sinh hoạt, vì nó là một nhạc cụ nhỏ gọn, di động. 
+            </p>
+            <br>
+            <p>
+                Nó có 16 miếng đệm nhạy cảm với vận tốc, hoàn hảo cho cá mẫu và các vòng lặp. Người chơi có thể kích hoạt bằng một nút nhấn đơn giản. Bộ nhớ sản phẩm có các khe rãnh trống để thêm các bản nhạc mà bạn đã sáng tác, lưu giữ lại làm tư liệu sản xuất âm nhạc sau này. Đây là một sản phẩm sản xuất âm nhạc nghiêm túc. 
+            </p>
+            <h3>
+                Kết hợp Verselab MV-1 với ứng dụng Zenbeats của Roland
+            </h3>
+            <p>
+                Nếu bạn thực sự nghiêm túc về việc sản xuất nhạc bằng thiết bị này, thì bạn sẽ muốn ghép nối nó với ứng dụng Zenbeats của Roland. Nó có khả năng tương thích hoàn toàn với phần mềm, làm cho khả năng gần như vô tận.
+            </p>
+            <br>
+            <p>Zenbeats là DAW của Roland dành cho các thiết bị thông minh, vì vậy nó hoạt động hoàn hảo trên điện thoại thông minh và máy tính bảng iOS và Android. Với Zenbeats bạn có thể cung cấp năng lượng vô tận cho Verselab để sản xuất âm nhạc. </p>
+            <h3>
+                Tại sao nên sử dụng Roland Verselab
+            </h3>
+            <p>
+                Roland là một trong những nhà thiết kế, sản xuất phần cứng âm nhạc được đánh giá cao nhất trên thế giới. Phần lớn âm nhạc chúng ta nghe ngày nay là âm nhạc điện tử, sẽ không thể thực hiện được nếu không có những bộ trống điện chất lượng cao như TR-808 và TR-909, hoặc bộ tổng hợp của nó là TB-303.
+            </p>
+            <br>
+            <p>
+                Âm thanh của những bộ trống này thông qua Zenbeats cung cấp cho Verselab những bản mẫu đích thực, nâng cao hiệu suất sử dụng cho nó. 
+            </p>
+            <br>
+            <p>
+                Phải nói rằng MV-1 trông khá tuyệt vời, vì bản chất nó là một phòng thu di động, người dùng có thể sản xuất âm nhạc ở bất cứ đâu, bất cứ khi nào. Nó có thể bắt ngay được cảm xúc của bạn lúc đó. 
+            </p>
+            <br>
+            <p>
+                Tính di động của Verselab MV-1 là điều mà nhiều người yêu thích, họ sẽ không phải mang cả một cây đàn bên mình, ko cần kéo theo cả một dàn thiết bị phức tạp để có thể chớp lấy ngay một giai điệu ngẫu hứng, có thể sáng tác ngay tác phẩm của mình. Verselab MV-1 hoàn toàn có thể khắc phục các nhược điểm này. 
+            </p>
+        </article>
+	</div>
+    <footer class="footer">
+        <div class="services">
+            <div class="item ship-services">
+                <a href="/html/services/ship.html">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div>
+                        <h6>Miễn phí vận chuyển</h6>
+                        <p>Nội thành Hà Nội <br> - Tp. Hồ Chí Minh</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item order-services">
+                   <a href="/html/services/order.html">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <h6>Đặt hàng nhanh</h6>
+                        <p>0869.301.716 - HCM <br>0869.301.716 - HN </p>
+                    </div>
+                </a>
+            </div >
+            <div class = "item agency-services">
+                <a href="/html/services/showroom.html">
+                    <i class="fa-solid fa-house"></i>
+                    <div>
+                        <h6>Đại lý</h6>
+                        <p>Trải rộng kháp Việt nam</p>
+                    </div>
+                </a>
+            </div>
+            <div class = "item shield-services">
+                <a href="/html/services/guarantee.html">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h6>Bảo hành </h6>
+                        <p>Hiểu quả - Chất lượng</p>
+                    </div>
+                </a>
+            </div>
+
+        </div >
+        <div class="container">
+            <div class="container-footer">
+                <div class="infor-khuyenmai">
+                    <div class="letter">
+                            <a href="" style="font-size: 21px; text-transform: none;">Cập Nhật Thông Tin Khuyến Mãi</a>
+                    </div> 
+                    <div class="frm-letter">
+                        <input type="email" name="" id="" placeholder="Email Của Bạn :"><button><h4>Đăng Ký</h4></button>
+                    </div>
+                    
+                    <div class="Connect">
+                        <a href="">
+                            <img src="/img/MES.png" alt="">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="Support">
+                    <div class="letter">
+                        <a class="support-cus" href="" style="font-size: 21px; text-transform: none;">Hỗ Trợ Khách Hàng</a>
+                    </div>
+                    <div class="Call" style="font-size: 20px;">
+                        <p style="font-size: 18px; color: red; cursor: pointer;">0869.301.716</p>	
+                        <p style="font-size: 18px; color: red; cursor: pointer;">0908.756.345</p>	
+                    </div><br>
+                    <div class="letter">
+                        Khiếu Nại , Bảo Hành : <span style="color: red;"> 0869 301 716</span>
+                    </div>
+                    <div class="letter">
+                        Thời Gian Phục Vụ : 8h - 22h
+                    </div>
+                    <div class="letter">
+                        Email : hung000anh@gmail.com
+                    </div>
+                </div>
+
+                <div class="MyInfo">
+                    <!-- thẻ này sẽ nằm trong phần html ( services ) -->
+                    <div class="letter"> 
+                        <a href="/html/services/letter.html" style="font-size: 21px; text-transform: none;">
+                            Về Chúng Tôi
+                        </a> 
+                    </div>
+
+                    <div class="letter">
+                        Kết Nối Với Chúng Tôi
+                    </div>
+                    
+                    <div class="Connect_We">
+                        <a href="https://www.facebook.com/profile.php?id=100067549362401" style="color: blue; font-size: 40px;"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCbtcfbqf0ALsOQQ8OqepVHg" style="color: red; font-size: 40px;"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/hung000anh/" style="color: palevioletred; font-size: 40px;"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href=""><img src="/img/zalo.svg" alt="" width="40px" style="margin-bottom: -3px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="End">
+            <!-- <p style="margin: auto; font-size: 20px; background-color: rgb(74, 74, 74);"> -->
+            <p style="margin: auto; font-size: 20px; background-color: rgb(74, 74, 74);">
+                © 2022 - 2025 Công Ty Cổ Phần TM DV SX PlayWithMe / Địa chỉ: Hẻm 23 , Đường 27-Phạm Văn Đồng , TP.HCM /  
+                Email: hung000anh@gmail.com 
+            </p>
+        </div>
+    </footer>
+	<script>
+
+		function checklogin()
+        {
+            var b = false;
+            var username = document.getElementById('username').value;
+            var userpass = document.getElementById("password").value;
+            var users = JSON.parse(localStorage.getItem('users'));
+            for (var i = 0; i < users.length; i++) {
+				if (users[i].loginname === username && users[i].pass === userpass) {
+					b = true;
+					break;
+				}
+				else if(users[i].loginname === username && users[i].pass !== userpass)
+				{
+					alert("Sai mật khẩu");
+					return;
+				}
+            }
+            if(b)
+            {
+                alert("Đăng nhập thành công");
+                return true;
+            }
+            else
+            {
+                alert("Người dùng không tồn tại")
+                return false;
+            }
+		}  
+        const loginBtn = document.querySelector('.Login');
+		const modal = document.querySelector('.modal');
+		
+		loginBtn.addEventListener('click', () => {
+			modal.classList.add('show'); // Hiển thị modal khi click vào nút "login"
+		});
+
+		modal.addEventListener('click', (e) => {
+			// Kiểm tra xem người dùng đã nhấp chuột vào vùng bên ngoài của modal hay không
+			if (e.target.classList.contains('modal')) {
+				modal.classList.remove('show'); // Ẩn modal khi người dùng nhấp chuột vào vùng bên ngoài của nó
+			}
+		});
+
+
+		const SgupBtn = document.querySelector('.Sign-up');
+		const modalsg = document.querySelector('.md-sighin');
+
+		SgupBtn.addEventListener('click', () => {
+			modalsg.classList.add('show');
+		});
+
+		modalsg.addEventListener('click', (e) => {
+			if (e.target.classList.contains('md-sighin')) {
+				modalsg.classList.remove('show');
+			}
+		});
+		function Checksignin() {
+		var signinRegex = /^[a-z0-9_-]{3,16}$/;
+		var err = document.getElementById('Checksignin');
+		var inputsg = document.getElementById('loginname').value;
+		if (!signinRegex.test(inputsg)) {
+			err.innerText = "Nhập sai cú pháp";
+			return false;
+		} else {
+			var tdusernam = document.querySelectorAll("td:first-child");
+			for (var i = 0; i < tdusernam.length; i++) {
+				if (tdusernam[i].innerText === inputsg) {
+					err.innerText = "Tên đăng nhập đã tồn tại";
+					return false;
+				}
+			}
+			err.innerText = "*";
+			return true;
+		}
+}
+
+    function checkcapitalized() {
+        var input = document.getElementById("fname").value;
+        var words = input.trim().split(" ");
+        var err = document.getElementById('testfname')
+        var valid = true;
+        for (var i = 0; i < words.length; i++) {
+            if (!/^([A-ZÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬĐÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰỲỴÝỶỸ][a-záàảãạăắằẳẵặâấầẩẫậđéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựỳỵýỷỹ]+\s*)+$/
+            .test(words[i])) {
+            valid = false;
+            break;
+        }
+        }
+        if (valid) {
+            err.innerText = "*";
+            return true
+        } else {
+            err.innerText = "Nhập sai cú pháp";
+            return false
+        }    
+    }
+    function checkTelephone() {
+    var phoneNumberRegex = /^\d{10}$/; // Biểu thức chính quy kiểm tra số điện thoại có đúng 10 số
+    var inputNumber = document.getElementById("phone-number").value.trim();
+    var err = document.getElementById('testtlp');
+    if(!phoneNumberRegex.test(inputNumber)) {
+        err.innerText = "Bắt buộc là số và phải là 10 số";
+        return false
+    }
+    else {
+        err.innerText = "*";
+        return true
+    }
+    }
+    function checkemail()
+    {
+        var emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+        var inputemail = document.getElementById('email').value
+        var err = document.getElementById('checkemail')
+        if(!emailRegex.test(inputemail))
+        {
+            err.innerText = "Đuôi email phải lớn hơn 2 hoặc 6"
+            return false
+        }
+        else
+        {
+            err.innerHTML = "*"
+            return true
+        }
+    }
+    function Checkpassword() {
+        var passwordRegex =  /^[a-z0-9_-]{6,18}$/
+        var inputpw = document.getElementById('pw').value
+        var err = document.getElementById('Checkpassword')
+        if(!passwordRegex.test(inputpw))
+        {
+            err.innerText = "Bắt buộc phải lớn hơn 6 kí tự"
+            return false
+        }
+        else
+        {
+            err.innerText ="*"
+            return true
+        }
+    }
+    function reenterPassword()
+    {
+        err = document.getElementById('checkre-enterpw')
+        if(document.getElementById('pw').value != document.getElementById('re-enterpw').value)
+        {
+            err.innerText = "Mật khẩu không trùng khớp"
+            return false
+        }
+        else
+        {
+            err.innerText = "*"
+            return true
+        }
+    }
+    function addRow() {
+  if (checkTelephone() && checkcapitalized() && checkemail() && Checkpassword() && Checksignin() && reenterPassword()) {
+    var loginname = document.getElementById("loginname").value;
+    var fname = document.getElementById("fname").value;
+    var email = document.getElementById("email").value;
+	var pass = document.getElementById("pw").value;
+    var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var loginnameCell = row.insertCell(0);
+    var nameCell = row.insertCell(1);
+    var EmailCell = row.insertCell(2);
+	var pwCell = row.insertCell(3);
+    loginnameCell.innerText = loginname;
+    nameCell.innerHTML = fname;
+    EmailCell.innerHTML = email;
+	pwCell.innerText = pass;
+    var newRow = {
+      loginname: loginname,
+      fname: fname,
+      email: email,
+	  pass: pass,
+    };
+    
+    // Lấy danh sách người dùng từ localStorage hoặc khởi tạo một danh sách trống nếu chưa có
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Thêm người dùng mới vào danh sách
+    users.push(newRow);
+    // Cập nhật danh sách người dùng trong localStorage
+    localStorage.setItem("users", JSON.stringify(users));
+    displayUserInfo()
+  } else {
+    var errorMessage = "Vui lòng sửa các lỗi sau:\n";
+    if (!checkTelephone()) {
+      errorMessage += "- Số điện thoại không hợp lệ.\n";
+    }
+    if (!checkcapitalized()) {
+      errorMessage += "- Tên không được viết hoa chữ cái đầu.\n";
+    }
+    if (!checkemail()) {
+      errorMessage += "- Địa chỉ email không hợp lệ.\n";
+    }
+    if (!Checkpassword()) {
+      errorMessage += "- Mật khẩu phải chứa ít nhất 8 ký tự và bao gồm ít nhất một chữ cái viết hoa, một chữ cái viết thường, một số và một ký tự đặc biệt.\n";
+    }
+    if (!Checksignin()) {
+      errorMessage += "- Sai cú pháp hoặc tên đăng nhập tồn tại.\n";
+    }
+    if (!reenterPassword()) {
+      errorMessage += "- Mật khẩu nhập lại không hợp lệ"
+    }
+    alert(errorMessage);
+  }
+}
+    function displayUserInfo() {
+            var userArray = JSON.parse(localStorage.getItem("users")) || [];
+            var tableBody = document.getElementById("user-info");
+
+            // Clear previous data
+            tableBody.innerHTML = "";
+
+            // Add new data
+            userArray.forEach(function(user) {
+                var row = document.createElement("tr");
+                var usernameCell = document.createElement("td");
+                var nameCell = document.createElement("td");
+                var emailCell = document.createElement("td")
+                usernameCell.textContent = user.loginname;
+                nameCell.textContent = user.fname;
+                emailCell.textContent = user.email;
+
+                row.appendChild(usernameCell)
+                row.appendChild(nameCell);
+                row.appendChild(emailCell);
+                tableBody.appendChild(row);
+            });
+        }
+        displayUserInfo()
+	</script>
+</body>
+</html>

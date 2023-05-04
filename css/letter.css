@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    font-size: 90px;
+    text-align: center;
+    -webkit-animation: my 700ms infinite;
+    -moz-animation: my 700ms infinite; 
+    -o-animation: my 700ms infinite; 
+    animation: my 700ms infinite;
+}
+h2{
+    color: red;
+    font-size: 80px;
+    text-align: center;
+
+}
+@-webkit-keyframes my {
+    0% { color: red; } 
+    50% { color: black;  } 
+    100% { color: red;  } 
+}
+@-moz-keyframes my { 
+    0% { color: red;  } 
+    50% { color: black;  }
+    100% { color: red;  } 
+}
+@-o-keyframes my { 
+    0% { color: red; } 
+    50% { color: blackf; } 
+    100% { color: red;  } 
+}
+@keyframes my { 
+    0% { color: red;  } 
+    50% { color: black;  }
+    100% { color: red;  } 
+} 
+.info{
+    display: flex;
+    text-align: center;
+}
+.name-hao{
+    width: 50%;
+}
+.name-hunganh{
+    width: 50%;
+}
+.p1{
+    font-size: 25px;
+}

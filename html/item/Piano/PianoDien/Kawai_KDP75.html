@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/item.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container-1">
+        <div class="modal">
+            <form>
+                <img src="/img/Screenshot 2023-03-25 092629.png" alt="">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username" class="username">
+                <br>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" class="password">
+                <br>
+                <button type="button" onclick="checklogin()">Đăng nhập</button>  
+            </form>
+        </div>
+        <div class="md-sighin">
+            <div class="form">
+                <form>
+                    <img src="/img/Screenshot 2023-03-25 092629.png" alt="">
+                    <br>
+                    <label for="loginname" > Tên đăng nhập</label>
+                    <br>
+                    <input type="text" id="loginname" onkeyup="Checksignin()">
+                    <span id="Checksignin"></span>
+                    <br>
+                    <label for="fname">Họ và tên</label>
+                    <br>
+                    <input type="text" id="fname" onkeyup="checkcapitalized()">
+                    <span id="testfname"></span>
+                    <br>
+                    
+                    <label for="phone-number" >Số điện thoại</label>
+                    <br>
+                    <input type="text" id="phone-number" onkeyup="checkTelephone()">
+                    <span id="testtlp"></span>
+                    <br>
+                    
+                    
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="text" id="email" name="email" onkeyup="checkemail()">
+                    <span id="checkemail"></span>
+                    
+                    <br><label for="pw">Nhập mật khẩu</label>
+                    <br><input type="password" id="pw" name="pw" onkeyup="Checkpassword()">
+                    <span id="Checkpassword"></span>
+                    
+                    <br><label for="re-enterpw">Nhập lại mật khẩu</label>
+                    <br><input type="password" id="re-enterpw" name="re-enterpw" onblur="reenterPassword()">
+                    <span id="checkre-enterpw"></span>
+                    <br>
+                    <br>
+                    <input type="button" value="Submit" onclick="addRow()">
+                </form>
+                <div class="tb">
+                    <table id="myTable">
+                        <tr>
+                            <th>Login-Name</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                        <tbody id="user-info"></tbody>
+                    </table>
+                    
+                </div>
+    
+            </div>
+        </div>   
+        <header>
+            <div class="logo-item">
+                <a href="/html/index_main/index.html">
+                    <img src="/img/Screenshot 2023-03-13 142256.png" alt="">
+                </a>
+            </div>
+            <div class = "item newspaper">
+                <a href="/html/services/newpaper.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <div>
+                        <h6>Bài báo</h6>
+                        <p>Các sản phẩm mới</p>
+                    </div>
+                 </a>
+            </div>
+            <div class="item showroom" >
+                <a href="/html/services/sale.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h6>Showroom</h6>
+                        <p>Gần nhất</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item cart-services" >
+                <a href="">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div>
+                        <h6>Giỏ hàng</h6>
+                        <p>(0) Sản phẩm</p>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="form-login-signup">
+                <div class="btt-1">
+                    <button type="button" class="Login">Đăng nhập </button><i class="fa-solid fa-right-to-bracket"></i>
+    
+                </div>
+                <div class="btt-2">
+                    <button  type="button" class="Sign-up">Đăng ký</button><i class="fa-solid fa-user-plus"></i>
+                </div>
+            </div>
+    
+        </header>
+    </div>
+    
+    <nav>
+        <ul>
+                <li class="nav -piano">
+                    <a href="/html/piano/piano_main.html">
+                        <p>Đàn Piano</p><i class="fa-sharp fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li class="in-nav ur">
+                            <a href="/html/piano/upright.html">
+                                <p>ĐÀN PIANO UPRIGHT</p>
+                            </a>
+                        </li>
+                        <li class="in-nav gr">
+                            <a href="/html/piano/grand.html">
+                                <p> ĐÀN PIANO GRAND</p>
+                            </a>
+                        </li>
+                        <li class="in-nav dp">
+                            <a href="/html/piano/digtal.html">
+                                <p>DIGITAL PIANO </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav -guitar">
+                    <a href="/html/guitar/guitar_main.html">
+                        <p>Đàn Guitar</p><i class="fa-sharp fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li class="in-nav ke">
+                            <a href="/html/guitar/ukulele.html"><p>ĐÀN UKULELE</p></a>
+                        </li>
+                        <li class="in-nav ac">
+                            <a href="/html/guitar/acousitic.html"><p>GUITAR ACOUSTIC</p></a>
+                        </li>
+                        <li class="in-nav cl">
+                            <a href="/html/guitar/classic.html"><p>GUITAR CLASSIC</p></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav -drum">
+                    <a href="/html/drum/drum_main.html">
+                        <p>Trống-bộ gõ</p><i class="fa-sharp fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li class="in-nav drel">
+                            <a href="/html/drum/drum_el.html">
+                                <p>TRỐNG ĐIỆN TỬ </p></a>
+                            </li>
+                        <li class="in-nav drds">
+                            <a href="/html/drum/accousitic.html">
+                                <p>Trống ACCOUSTIC </p>
+                            </a>
+                        </li>
+                        <li class="in-nav drbg">
+                            <a href="/html/drum/bogo.html">
+                                <p>BỘ GÕ </p>
+                            </a>
+    
+                        </li>
+                    </ul>
+                </li>
+                <!--  -->
+                <div class="search">
+                    <input type="search" name="" id="" placeholder="Tìm kiếm">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <article>
+            <div class="container-article">
+                <h2 class="title">Kawai KDB-75</h2>
+    
+                <div class="content">
+                    <section>
+                        <img src="/img/kawai-kdp75.jpg" alt="" srcset="" height="380px">
+                    </section>
+                    <aside>
+                        <hr style="border: 1px solid rgb(207, 202, 202);">
+                        <!-- <span class="price">92,000,000 đ</span> -->
+                        <p class="price">21,900,000 đ</p>
+                        <div class="ship">
+                            <p style="margin-left: 10px;"><i class="fa-solid fa-truck-fast"></i></p>
+                            <span class="text-ship">Miễn Phí Giao Hàng TPHCM , Hà Nội</span>
+                        </div>
+                        <div class="box">
+                            <div class="title-box">
+                                <p>Điểm nổi bật</p>
+                            </div>
+                            <div class="content-box">
+                                <p style="font-weight: 700;">Quà Tặng Khi Mua Sản Phẩm</p>
+                                <p> - Túi đựng đàn SC-900P</p>
+                                <p> - Micro Tascam TM-82</p>
+                                <p> - Ghế tăng giảm (GHEPIANO)</p>
+                            </div>
+                        </div>
+                        <div class="buy">
+                            <button type="submit">
+                                <p style="font-weight: 700;">Mua Ngay</p>
+                                <p>Giao hàng , thu tiền tận nơi</p>
+                            </button>
+                        </div>
+                        <div class="LienHe">
+                            <p>Liên Hệ</p>
+                            <p class="sdt">0869.301.716 HCM</p>
+                            <p class="sdt">0886.548.798 HN</p>
+                            <p>Để được tư vấn</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <div class="container-2">
+        <footer class="footer">
+            <div class="services">
+                <div class="item ship-services">
+                    <a href="/html/services/ship.html">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <h6>Miễn phí vận chuyển</h6>
+                            <p>Nội thành Hà Nội <br> - Tp. Hồ Chí Minh</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item order-services">
+                       <a href="/html/services/order.html">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <h6>Đặt hàng nhanh</h6>
+                            <p>0869.301.716 - HCM <br>0869.301.716 - HN </p>
+                        </div>
+                    </a>
+                </div >
+                <div class = "item agency-services">
+                    <a href="/html/services/showroom.html">
+                        <i class="fa-solid fa-house"></i>
+                        <div>
+                            <h6>Đại lý</h6>
+                            <p>Trải rộng kháp Việt nam</p>
+                        </div>
+                    </a>
+                </div>
+                <div class = "item shield-services">
+                    <a href="/html/services/guarantee.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h6>Bảo hành </h6>
+                            <p>Hiểu quả - Chất lượng</p>
+                        </div>
+                    </a>
+                </div>
+    
+            </div >
+            <div class="container">
+                <div class="container-footer">
+                    <div class="infor-khuyenmai">
+                        <div class="letter">
+                                <a href="" style="font-size: 21px; text-transform: none;">Cập Nhật Thông Tin Khuyến Mãi</a>
+                        </div> 
+                        <div class="frm-letter">
+                            <input type="email" name="" id="" placeholder="Email Của Bạn :"><button><h4>Đăng Ký</h4></button>
+                        </div>
+                        
+                        <div class="Connect">
+                            <a href="">
+                                <img src="/img/MES.png" alt="">
+                            </a>
+                        </div>
+    
+                    </div>
+    
+                    <div class="Support">
+                        <div class="letter">
+                            <a class="support-cus" href="" style="font-size: 21px; text-transform: none;">Hỗ Trợ Khách Hàng</a>
+                        </div>
+                        <div class="Call" style="font-size: 20px;">
+                            <p style="font-size: 18px; color: red; cursor: pointer;">0869.301.716</p>	
+                            <p style="font-size: 18px; color: red; cursor: pointer;">0908.756.345</p>	
+                        </div><br>
+                        <div class="letter">
+                            Khiếu Nại , Bảo Hành : <span style="color: red;"> 0869 301 716</span>
+                        </div>
+                        <div class="letter">
+                            Thời Gian Phục Vụ : 8h - 22h
+                        </div>
+                        <div class="letter">
+                            Email : hung000anh@gmail.com
+                        </div>
+                    </div>
+    
+                    <div class="MyInfo">
+                        <!-- thẻ này sẽ nằm trong phần html ( services ) -->
+                        <div class="letter"> 
+                            <a href="/html/services/letter.html" style="font-size: 21px; text-transform: none;">
+                                Về Chúng Tôi
+                            </a> 
+                        </div>
+    
+                        <div class="letter">
+                            Kết Nối Với Chúng Tôi
+                        </div>
+                        
+                        <div class="Connect_We">
+                            <a href="https://www.facebook.com/profile.php?id=100067549362401" style="color: blue; font-size: 40px;"><i class="fa-brands fa-square-facebook"></i></a>
+                            <a href="https://www.youtube.com/channel/UCbtcfbqf0ALsOQQ8OqepVHg" style="color: red; font-size: 40px;"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/hung000anh/" style="color: palevioletred; font-size: 40px;"><i class="fa-brands fa-square-instagram"></i></a>
+                            <a href=""><img src="/img/zalo.svg" alt="" width="40px" style="margin-bottom: -3px;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="End">
+                <!-- <p style="margin: auto; font-size: 20px; background-color: rgb(74, 74, 74);"> -->
+                <p style="margin: auto; font-size: 20px; background-color: rgb(74, 74, 74);">
+                    © 2022 - 2025 Công Ty Cổ Phần TM DV SX PlayWithMe / Địa chỉ: Hẻm 23 , Đường 27-Phạm Văn Đồng , TP.HCM /  
+                    Email: hung000anh@gmail.com 
+                </p>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <script>
+        function checklogin()
+        {
+            var b = false;
+            var username = document.getElementById('username').value;
+            var userpass = document.getElementById("password").value;
+            var users = JSON.parse(localStorage.getItem('users'));
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].loginname === username && users[i].pass === userpass) {
+                    b = true;
+                    break;
+                }
+                else if(users[i].loginname === username && users[i].pass !== userpass)
+                {
+                    alert("Sai mật khẩu");
+                    return;
+                }
+            }
+            if(b)
+            {
+                alert("Đăng nhập thành công");
+                return true;
+            }
+            else
+            {
+                alert("Người dùng không tồn tại")
+                return false;
+            }
+        }  
+        const loginBtn = document.querySelector('.Login');
+        const modal = document.querySelector('.modal');
+        
+        loginBtn.addEventListener('click', () => {
+            modal.classList.add('show'); // Hiển thị modal khi click vào nút "login"
+        });
+    
+        modal.addEventListener('click', (e) => {
+            // Kiểm tra xem người dùng đã nhấp chuột vào vùng bên ngoài của modal hay không
+            if (e.target.classList.contains('modal')) {
+                modal.classList.remove('show'); // Ẩn modal khi người dùng nhấp chuột vào vùng bên ngoài của nó
+            }
+        });
+    
+    
+        const SgupBtn = document.querySelector('.Sign-up');
+        const modalsg = document.querySelector('.md-sighin');
+    
+        SgupBtn.addEventListener('click', () => {
+            modalsg.classList.add('show');
+        });
+    
+        modalsg.addEventListener('click', (e) => {
+            if (e.target.classList.contains('md-sighin')) {
+                modalsg.classList.remove('show');
+            }
+        });
+        function Checksignin() {
+        var signinRegex = /^[a-z0-9_-]{3,16}$/;
+        var err = document.getElementById('Checksignin');
+        var inputsg = document.getElementById('loginname').value;
+        if (!signinRegex.test(inputsg)) {
+            err.innerText = "Nhập sai cú pháp";
+            return false;
+        } else {
+            var tdusernam = document.querySelectorAll("td:first-child");
+            for (var i = 0; i < tdusernam.length; i++) {
+                if (tdusernam[i].innerText === inputsg) {
+                    err.innerText = "Tên đăng nhập đã tồn tại";
+                    return false;
+                }
+            }
+            err.innerText = "*";
+            return true;
+        }
+    }
+    
+    function checkcapitalized() {
+        var input = document.getElementById("fname").value;
+        var words = input.trim().split(" ");
+        var err = document.getElementById('testfname')
+        var valid = true;
+        for (var i = 0; i < words.length; i++) {
+            if (!/^([A-ZÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬĐÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰỲỴÝỶỸ][a-záàảãạăắằẳẵặâấầẩẫậđéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựỳỵýỷỹ]+\s*)+$/
+            .test(words[i])) {
+            valid = false;
+            break;
+        }
+        }
+        if (valid) {
+            err.innerText = "*";
+            return true
+        } else {
+            err.innerText = "Nhập sai cú pháp";
+            return false
+        }    
+    }
+    function checkTelephone() {
+    var phoneNumberRegex = /^\d{10}$/; // Biểu thức chính quy kiểm tra số điện thoại có đúng 10 số
+    var inputNumber = document.getElementById("phone-number").value.trim();
+    var err = document.getElementById('testtlp');
+    if(!phoneNumberRegex.test(inputNumber)) {
+        err.innerText = "Bắt buộc là số và phải là 10 số";
+        return false
+    }
+    else {
+        err.innerText = "*";
+        return true
+    }
+    }
+    function checkemail()
+    {
+        var emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+        var inputemail = document.getElementById('email').value
+        var err = document.getElementById('checkemail')
+        if(!emailRegex.test(inputemail))
+        {
+            err.innerText = "Đuôi email phải lớn hơn 2 hoặc 6"
+            return false
+        }
+        else
+        {
+            err.innerHTML = "*"
+            return true
+        }
+    }
+    function Checkpassword() {
+        var passwordRegex =  /^[a-z0-9_-]{6,18}$/
+        var inputpw = document.getElementById('pw').value
+        var err = document.getElementById('Checkpassword')
+        if(!passwordRegex.test(inputpw))
+        {
+            err.innerText = "Bắt buộc phải lớn hơn 6 kí tự"
+            return false
+        }
+        else
+        {
+            err.innerText ="*"
+            return true
+        }
+    }
+    function reenterPassword()
+    {
+        err = document.getElementById('checkre-enterpw')
+        if(document.getElementById('pw').value != document.getElementById('re-enterpw').value)
+        {
+            err.innerText = "Mật khẩu không trùng khớp"
+            return false
+        }
+        else
+        {
+            err.innerText = "*"
+            return true
+        }
+    }
+    function addRow() {
+    if (checkTelephone() && checkcapitalized() && checkemail() && Checkpassword() && Checksignin() && reenterPassword()) {
+    var loginname = document.getElementById("loginname").value;
+    var fname = document.getElementById("fname").value;
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("pw").value;
+    var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var loginnameCell = row.insertCell(0);
+    var nameCell = row.insertCell(1);
+    var EmailCell = row.insertCell(2);
+    var pwCell = row.insertCell(3);
+    loginnameCell.innerText = loginname;
+    nameCell.innerHTML = fname;
+    EmailCell.innerHTML = email;
+    pwCell.innerText = pass;
+    var newRow = {
+      loginname: loginname,
+      fname: fname,
+      email: email,
+      pass: pass,
+    };
+    
+    // Lấy danh sách người dùng từ localStorage hoặc khởi tạo một danh sách trống nếu chưa có
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    // Thêm người dùng mới vào danh sách
+    users.push(newRow);
+    // Cập nhật danh sách người dùng trong localStorage
+    localStorage.setItem("users", JSON.stringify(users));
+    displayUserInfo()
+    } else {
+    var errorMessage = "Vui lòng sửa các lỗi sau:\n";
+    if (!checkTelephone()) {
+      errorMessage += "- Số điện thoại không hợp lệ.\n";
+    }
+    if (!checkcapitalized()) {
+      errorMessage += "- Tên không được viết hoa chữ cái đầu.\n";
+    }
+    if (!checkemail()) {
+      errorMessage += "- Địa chỉ email không hợp lệ.\n";
+    }
+    if (!Checkpassword()) {
+      errorMessage += "- Mật khẩu phải chứa ít nhất 8 ký tự và bao gồm ít nhất một chữ cái viết hoa, một chữ cái viết thường, một số và một ký tự đặc biệt.\n";
+    }
+    if (!Checksignin()) {
+      errorMessage += "- Sai cú pháp hoặc tên đăng nhập tồn tại.\n";
+    }
+    if (!reenterPassword()) {
+      errorMessage += "- Mật khẩu nhập lại không hợp lệ"
+    }
+    alert(errorMessage);
+    }
+    }
+    function displayUserInfo() {
+            var userArray = JSON.parse(localStorage.getItem("users")) || [];
+            var tableBody = document.getElementById("user-info");
+    
+            // Clear previous data
+            tableBody.innerHTML = "";
+    
+            // Add new data
+            userArray.forEach(function(user) {
+                var row = document.createElement("tr");
+                var usernameCell = document.createElement("td");
+                var nameCell = document.createElement("td");
+                var emailCell = document.createElement("td")
+                usernameCell.textContent = user.loginname;
+                nameCell.textContent = user.fname;
+                emailCell.textContent = user.email;
+    
+                row.appendChild(usernameCell)
+                row.appendChild(nameCell);
+                row.appendChild(emailCell);
+                tableBody.appendChild(row);
+            });
+        }
+        displayUserInfo()
+    </script>
+</body>
+</html>
